@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Gato HTML</title>
+    <link rel="stylesheet" href="clase.css">
+</head>
+
+<body>
+    <div>
+    <p>Gato</p>
+    </div>
+<div>
+    <img onclick="alerta()" src="https://static.nationalgeographic.es/files/styles/image_3200/public/75552.ngsversion.1422285553360.webp?w=1600&h=1067"
+     width="40%" height="auto">
+</div>
+<br />
+    <h1>Ingresa datos de tu Gato</h1>
+
+    <form onsubmit="enviarForm(event)">
+        <div>
+            <label id="Nombre">Nombre de tu Gato: </label>
+            <input label="Nombre" placeholder="" id="inputNombre"type="text" minlength="3"  required />
+        </div>
+        <br />
+        <div>
+            <label>Peso de tu Gato(kg): </label>
+            <input id="inputPeso" type="number" min="3" max="5" />
+        </div>
+        <br />
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+<script src="clase.js" ></script>
+
+</html>
