@@ -3,14 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require("cors");
 
-const sequelize = require("./database/connect");
 var app = express();
-
-
+app.use(cors()); //permite todas las solicitudes de cualquier origen
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+
+const sequelize = require("./database/connect");
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,8 +27,7 @@ var studentRouter = require("./routes/student.routes");
 var teacherRouter = require("./routes/teacher.routes");
 app.use("/test",testsRouter);
 app.use("/student",studentRouter);
-app.use("/teacher",teacherRouter);
-
+app.use("/teacher", teacherRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
