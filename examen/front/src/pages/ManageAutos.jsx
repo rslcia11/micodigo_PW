@@ -64,19 +64,17 @@ const ManageAutos = () => {
               name="brand"
               value={formData.brand}
               onChange={handleChange}
-              placeholder="Ejemplo: Toyota"
               required
               style={{ padding: "0.5rem", width: "100%", marginTop: "0.5rem" }}
             />
           </div>
           <div style={{ width: "45%" }}>
-            <label>Pasajeros:</label>
+            <label>Nro.Pasajeros:</label>
             <input
               type="number"
               name="npassengers"
               value={formData.npassengers}
               onChange={handleChange}
-              placeholder="Ejemplo: 5"
               required
               style={{ padding: "0.5rem", width: "100%", marginTop: "0.5rem" }}
             />
@@ -91,7 +89,6 @@ const ManageAutos = () => {
               name="color"
               value={formData.color}
               onChange={handleChange}
-              placeholder="Ejemplo: Rojo"
               required
               style={{ padding: "0.5rem", width: "100%", marginTop: "0.5rem" }}
             />
@@ -103,7 +100,6 @@ const ManageAutos = () => {
               name="nengine"
               value={formData.nengine}
               onChange={handleChange}
-              placeholder="Ejemplo: 2.0"
               required
               style={{ padding: "0.5rem", width: "100%", marginTop: "0.5rem" }}
             />
@@ -117,7 +113,6 @@ const ManageAutos = () => {
             name="model"
             value={formData.model}
             onChange={handleChange}
-            placeholder="Ejemplo: 2023"
             required
             style={{ padding: "0.5rem", width: "100%", marginTop: "0.5rem" }}
           />
@@ -131,6 +126,7 @@ const ManageAutos = () => {
       <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "2rem" }}>
         <thead>
           <tr style={{ backgroundColor: "#f2f2f2" }}>
+          <th style={{ border: "1px solid #ddd", padding: "8px" }}>ID</th>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Marca</th>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Pasajeros</th>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Color</th>
@@ -142,10 +138,11 @@ const ManageAutos = () => {
         <tbody>
           {autos.map((auto) => (
             <tr key={auto.id}>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.id}</td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.brand}</td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.npassengers}</td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.color}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.nengine}</td>
+              <button><td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.nengine}</td>  </button>           
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>{auto.model}</td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                 <button onClick={() => handleEdit(auto)} style={{ padding: "0.5rem", backgroundColor: "#FF9800", color: "#fff", border: "none", cursor: "pointer", marginRight: "0.5rem" }}>
